@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SalesMvc.Models;
@@ -18,6 +19,7 @@ namespace SalesMvc.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
+            ViewData["MailAddress"] = "geraldo@qmedia.com.br"; 
 
             return View();
         }
