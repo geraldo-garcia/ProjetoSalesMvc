@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SalesMvc.Models;
+using SalesMvc.Models.ViewModels;
 
 namespace SalesMvc.Controllers
 {
