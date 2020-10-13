@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesMvc.Models;
+using SalesMvc.Data;
 
 namespace SalesMvc.Data
 {
