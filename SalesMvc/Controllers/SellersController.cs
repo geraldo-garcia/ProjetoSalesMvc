@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SalesMvc.Models;
 using SalesMvc.Services;
+using SalesMvc.Models.ViewModels;
 
 namespace SalesMvc.Controllers
 {
@@ -12,11 +13,13 @@ namespace SalesMvc.Controllers
     {
 
         private readonly SellerService _sellerService;
-        
+        private readonly DepartmentService _departmentService;
 
-        public SellersController(SellerService sellerService)
+
+        public SellersController(SellerService sellerService, DepartmentService departmentService)
         {
-            _sellerService = sellerService; 
+            _sellerService = sellerService;
+            _departmentService = departmentService;
         }
         
         public IActionResult Index()
@@ -27,7 +30,9 @@ namespace SalesMvc.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var departments = _departmentService.FindAll();
+            var viewModel = new SellerFormViewModel { Departments = departments }; //instancia um objeto do nosso viewModel e ja iniciamos com a lista de departamentos
+            return View(viewModel);                                                //passa o objeto viewModel para a nossa view e ja vem com os dados populados quando for acionada pela primeira vez
         }
 
         [HttpPost]
