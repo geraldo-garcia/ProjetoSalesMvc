@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SalesMvc.Data;
 using SalesMvc.Models;
+using SalesMvc.Services;
 
 namespace SalesMvc.Controllers
 {
@@ -149,5 +150,7 @@ namespace SalesMvc.Controllers
         {
             return _context.Department.Any(e => e.Id == id);
         }
+
+        
     }
 }
